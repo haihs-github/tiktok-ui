@@ -1,23 +1,22 @@
-import styles from './Header.module.scss'
+// thư viện
 import classNames from 'classnames/bind';
 import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+
+// scss module
+import styles from './Header.module.scss'
+
+// Comp
 import { Wrapper as PopperWrapper } from '~/componenets/Popper';
 import AccountItem from '~/componenets/AccountItems';
-
+import Button from '~/componenets/Button';
 const cx = classNames.bind(styles)
 
 function Header() {
-	const [searchResult, setSearchResult] = useState([])
-
-	useEffect(() => {
-		setTimeout(() => {
-			setSearchResult([1, 2, 3])
-		}, 0)
-	}, [])
+	const [searchResult] = useState([])
 
 	return (
 		<header className={cx('wrapper')}>
@@ -52,7 +51,8 @@ function Header() {
 					</div>
 				</Tippy>
 				<div className={cx('actions')}>
-
+					<Button text>upload</Button>
+					<Button primary leftIcon={<FontAwesomeIcon icon={faSignIn} />} onClick={() => alert('ok')}>Log in</Button>
 				</div>
 			</div>
 		</header >
