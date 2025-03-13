@@ -2,7 +2,7 @@
 import classNames from 'classnames/bind';
 import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion, faCircleXmark, faEarthAsia, faEllipsisVertical, faKeyboard, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import { useState } from 'react';
 
@@ -13,7 +13,24 @@ import styles from './Header.module.scss'
 import { Wrapper as PopperWrapper } from '~/componenets/Popper';
 import AccountItem from '~/componenets/AccountItems';
 import Button from '~/componenets/Button';
+import Menu from '~/componenets/Popper/Menu';
+
+
 const cx = classNames.bind(styles)
+const MENU_ITEMS = [
+	{
+		icon: <FontAwesomeIcon icon={faEarthAsia} />,
+		title: 'English'
+	},
+	{
+		icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+		title: 'Feedback and help',
+		to: '/feedback'
+	}, {
+		icon: <FontAwesomeIcon icon={faKeyboard} />,
+		title: 'Keyboard shortcuts'
+	},
+]
 
 function Header() {
 	const [searchResult] = useState([])
@@ -23,7 +40,6 @@ function Header() {
 			<div className={cx('inner')}>
 				<img src={images.logo} alt='logo' />
 				<Tippy
-					interactive
 					visible={searchResult.length > 0}
 					render={(attrs) => (
 						<div className={cx('search-result')} tabIndex="-1" {...attrs}>
@@ -52,7 +68,14 @@ function Header() {
 				</Tippy>
 				<div className={cx('actions')}>
 					<Button text>upload</Button>
-					<Button primary leftIcon={<FontAwesomeIcon icon={faSignIn} />} onClick={() => alert('ok')}>Log in</Button>
+					<Button primary >Log in</Button>
+					<Menu
+						items={MENU_ITEMS}
+					>
+						<button className={cx('more-btn')}>
+							<FontAwesomeIcon icon={faEllipsisVertical} />
+						</button>
+					</Menu>
 				</div>
 			</div>
 		</header >
