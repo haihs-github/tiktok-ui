@@ -16,6 +16,7 @@ import { Wrapper as PopperWrapper } from '~/componenets/Popper';
 import AccountItem from '~/componenets/AccountItems';
 import Button from '~/componenets/Button';
 import Menu from '~/componenets/Popper/Menu';
+import Image from './Image';
 
 
 const cx = classNames.bind(styles)
@@ -137,7 +138,7 @@ function Header() {
 					>
 						{currentUser ?
 							(
-								<img className={cx('user-avatar')} src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/6c1ad7da377a4185eabb429a85588d77~tplv-tiktokx-cropcenter:720:720.jpeg?dr=14579&refresh_token=29adae28&x-expires=1742050800&x-signature=R3V3dFPuoueTT4NLwxRZKbFVOWw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my" alt='nva' />
+								<Image className={cx('user-avatar')} src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/6c1ad7da377a4185eabb429a85588d77~tplv-tiktokx-cropcenter:720:720.jpeg?dr=14579&refresh_token=29adae28&x-expires=1742050800&x-signature=R3V3dFPuoueTT4NLwxRZKbFVOWw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my" alt='nva' />
 							) : (
 								<button className={cx('more-btn')}>
 									<FontAwesomeIcon icon={faEllipsisVertical} />
