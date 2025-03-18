@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleQuestion, faEarthAsia, faEllipsisVertical, faKeyboard, faCloudArrowUp, faUser, faCoins, faGear, faSignOut } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
 // scss module
 import styles from './Header.module.scss'
@@ -14,7 +15,7 @@ import Button from '~/componenets/Button';
 import Menu from '~/componenets/Popper/Menu';
 import Image from '../Image';
 import Search from '../Search';
-
+import routesConfig from '~/config/routes';
 
 const cx = classNames.bind(styles)
 const MENU_ITEMS = [
@@ -81,7 +82,7 @@ function Header() {
 	return (
 		<header className={cx('wrapper')}>
 			<div className={cx('inner')}>
-				<img src={images.logo} alt='logo' />
+				<Link to={routesConfig.home} className={cx('logo-link')}><img src={images.logo} alt='logo' /></Link>
 				{/* search */}
 				<Search />
 				<div className={cx('actions')}>
