@@ -7,7 +7,7 @@ import { useDebounce } from '~/hooks';
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as request from '~/utils/request';
+import * as request from '~/utils/httpRequest';
 
 const cx = classNames.bind(styles)
 

@@ -3,7 +3,7 @@ import styles from './AccountItem.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import Image from "../Layout/componenets/Image";
+import Image from "~/layouts/componenets/Image";
 
 const cx = classNames.bind(styles)
 
