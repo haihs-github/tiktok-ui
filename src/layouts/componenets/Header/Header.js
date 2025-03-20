@@ -100,7 +100,7 @@ function Header() {
 					) : (
 						<>
 							<Button text>upload</Button>
-							<Button primary >Log in</Button>
+							<Button primary>Log in</Button>
 
 						</>
 					)}
