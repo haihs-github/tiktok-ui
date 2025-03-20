@@ -2,6 +2,7 @@ import images from "~/assets/images";
 import { useState } from "react";
 import styles from './Image.module.scss'
 import classNames from "classnames";
+import PropTypes from "prop-types";
 
 function Image({ src, alt, className, ...props }) {
 	const [falseback, setFalseback] = useState('')
@@ -9,6 +10,11 @@ function Image({ src, alt, className, ...props }) {
 		setFalseback(images.noImage)
 	}
 	return (<img className={classNames(className, styles.wrapper)} src={falseback || src} alt={alt} {...props} onError={handleError} />);
+}
+Image.propTypes = {
+	src: PropTypes.string,
+	alt: PropTypes.string,
+	className: PropTypes.string,
 }
 
 export default Image;
